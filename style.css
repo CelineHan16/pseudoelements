@@ -1,0 +1,58 @@
+.important::before {
+  content: "!";
+  background-color: red;
+  color: white;
+}
+.important::after {
+  content: "!";
+  background-color: red;
+  color: white;
+}
+.funny::after {
+  content: "";
+}
+.green::before {
+  content: "@";
+  background-color: green;
+  color: white;
+  padding: 2px;
+}
+
+.tooltip {
+  position: relative;
+  border-bottom: 1px dotted black;
+  cursor: pointer;
+}
+.tooltip::before {
+  content: "";
+  border: 10px solid black;
+  border-color: transparent transparent rgba(0, 0, 0, .7);
+  display: inline-block;
+
+  position: absolute;
+  top: 100%;
+  left: 10px;
+  margin-top: -9px;
+
+  visibility: hidden;
+}
+.tooltip:hover::before, .tooltip:hover::after {
+  visibility: visible;
+}
+.tooltip::after {
+  content: attr(data-tooltip);
+
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, .7);
+  color: white;
+  border-radius: 10px;
+
+  position: absolute;
+  top: 100%;
+  left: -10px;
+  width: 200px;
+  margin-top: 10px;
+  
+  visibility: hidden;
+}
