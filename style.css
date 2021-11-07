@@ -26,7 +26,7 @@
 .tooltip::before {
   content: "";
   border: 10px solid black;
-  border-color: transparent transparent rgba(0, 0, 0, .7);
+  border-color: transparent transparent rgba(0, 0, 0, .7) transparent;
   display: inline-block;
 
   position: absolute;
@@ -52,7 +52,38 @@
   top: 100%;
   left: -10px;
   width: 200px;
+  min-width: 70px;
   margin-top: 10px;
   
   visibility: hidden;
+}
+
+.tooltip-top::before {
+  border-color: rgba(0, 0, 0, .7) transparent transparent transparent;
+
+  margin-top: -25px;
+}
+.tooltip-top::after {
+  margin-top: -70px;
+}
+
+.tooltip-right::before {
+  border-color: transparent rgba(0, 0, 0, .7) transparent  transparent;
+  margin-top: -18px;
+  left: 32px;
+}
+.tooltip-right::after {
+  left: 52px;
+  margin-top: -30px;
+}
+
+.tooltip-left::before {
+  border-color: transparent transparent  transparent rgba(0, 0, 0, .7);
+  margin-top: -18px;
+  left: -10px;
+}
+.tooltip-left::after {
+  width: 150px;
+  left: -179px;
+  margin-top: -22px;
 }
